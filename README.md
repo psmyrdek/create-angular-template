@@ -1,6 +1,6 @@
 # Create Angular Template
 
-Transform AngularJS templates into Angular syntax
+Transform AngularJS templates into Angular syntax. Currently supports Angular 5.1.x.
 
 ## How it works
 
