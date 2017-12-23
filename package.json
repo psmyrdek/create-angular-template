@@ -1,0 +1,31 @@
+{
+  "name": "create-angular-template",
+  "version": "0.0.1",
+  "description": "Transform AngularJS templates into Angular syntax",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psmyrdek/create-angular-template.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "template"
+  ],
+  "author": "psmyrdek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psmyrdek/create-angular-template/issues"
+  },
+  "homepage": "https://github.com/psmyrdek/create-angular-template#readme",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "jest": "^22.0.4"
+  }
+}
