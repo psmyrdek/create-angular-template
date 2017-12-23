@@ -30,6 +30,8 @@ After:
 
 ### Syntax changes:
 
+Based on [AngularJS to Angular Quick Reference CheatSheet](https://angular.io/guide/ajs-quick-reference)
+
 * `ng-click` -> `(click)`
 * `ng-submit` -> `(ngSubmit)`
 * `ng-hide` -> `[hidden]`
