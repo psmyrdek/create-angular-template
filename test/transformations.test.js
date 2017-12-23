@@ -153,3 +153,19 @@ test('It should remove $ctrl as default alias for this', () => {
     expect(transformResult).toEqual(expectedResult);
 
 });
+
+test('It should convert ng-model to [(ng-model)]', () => {
+
+    const template = `
+        <input type="text" ng-model="$ctrl.profileName" />
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <input type="text" [(ngModel)]="profileName" />
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});

@@ -58,8 +58,9 @@ Based on [AngularJS to Angular Quick Reference CheatSheet](https://angular.io/gu
 
 * `ng-click` -> `(click)`
 * `ng-submit` -> `(ngSubmit)`
-* `ng-hide` -> `[hidden]`
+* `ng-model` -> `[(ngModel)]`
 * `ng-class` -> `[ngClass]`
+* `ng-hide` -> `[hidden]`
 * `ng-show` -> `[hidden] with negation`
 * `ng-if` -> `*ngIf`
 * `ng-repeat="item in items` -> `*ngFor="let item of items"`
