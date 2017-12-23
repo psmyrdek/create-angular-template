@@ -21,7 +21,7 @@ After:
 <div>
     <p *ngIf="showDetails">Some details</p>
     <ul>
-        <li *ngFor="item in items"></li>
+        <li *ngFor="let item of items"></li>
     </ul>
 </div>
 ```
