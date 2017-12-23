@@ -28,6 +28,12 @@ After:
 
 ## Usage
 
+### Installation
+
+Install `create-angular-template` as typical npm package:
+
+`npm install create-angular-template'
+
 ### Basic usage:
 
 ```
