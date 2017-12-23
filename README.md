@@ -28,10 +28,21 @@ After:
 
 ## Usage
 
+### Basic usage:
+
 ```
 const { transformTemplate } = require('create-angular-template');
 const angularTemplate = transformTemplate(template, options);
 ```
+
+* template (string) - AngularJS template
+* options (object) - configure transformation process
+
+### Options:
+
+* `stripTagPrefix` (string) - used to strip prefixes like `data-ng-if` *(default: `data`)*
+* `aliasForThis` (string) - used in AngularJS to define scope of given variable *(default: `$ctrl`)*
+* `format` (string) - format of input template *(default: `html`)*
 
 ## Supported transformations
 
