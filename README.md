@@ -59,6 +59,9 @@ Based on [AngularJS to Angular Quick Reference CheatSheet](https://angular.io/gu
 * `ng-click` -> `(click)`
 * `ng-submit` -> `(ngSubmit)`
 * `ng-model` -> `[(ngModel)]`
+* `ng-switch` -> `[ngSwitch]`
+* `ng-switch-when` -> `*ngSwitchCase`
+* `ng-switch-default` -> `*ngSwitchDefault`
 * `ng-class` -> `[ngClass]`
 * `ng-hide` -> `[hidden]`
 * `ng-show` -> `[hidden] with negation`

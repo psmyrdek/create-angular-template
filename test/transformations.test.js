@@ -169,3 +169,39 @@ test('It should convert ng-model to [(ng-model)]', () => {
     expect(transformResult).toEqual(expectedResult);
 
 });
+
+test('It should convert ng-switch to [ngSwitch]', () => {
+
+    const template = `
+        <div ng-switch="$ctrl.shouldShowModal">
+            <p ng-switch-when="true">
+                Modal visible
+            </p>
+            <p ng-switch-when="false">
+                Modal hidden
+            </p>
+            <p ng-switch-default>
+                Default option
+            </p>
+        </div>
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <div [ngSwitch]="shouldShowModal">
+            <p *ngSwitchCase="true">
+                Modal visible
+            </p>
+            <p *ngSwitchCase="false">
+                Modal hidden
+            </p>
+            <p *ngSwitchDefault>
+                Default option
+            </p>
+        </div>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
