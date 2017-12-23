@@ -75,14 +75,14 @@ test('It should convert ng-show to hidden with negation', () => {
 test('It should convert ng-repeat to *ngFor', () => {
 
     const template = `
-        <li ng-repeat="item in vm.items"></li>
-    `;
+    <li ng-repeat="item in vm.items"></li>
+`;
 
     const transformResult = transformTemplate(template);
 
     const expectedResult = `
-        <li *ngFor="let item of vm.items"></li>
-    `;
+    <li *ngFor="let item of vm.items"></li>
+`;
 
     expect(transformResult).toEqual(expectedResult);
 
@@ -127,6 +127,26 @@ test('It should replace alias for this - controllerAs, ctrl, vm, etc', () => {
                     <p *ngIf="showDetails">{{ item.details }}</p>
                 </li>
             </ul>
+        </div>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should remove $ctrl as default alias for this', () => {
+
+    const template = `
+        <div ng-click="$ctrl.test()">
+            <div ng-if="$ctrl.isAllowed"></div>
+        </div>
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <div (click)="test()">
+            <div *ngIf="isAllowed"></div>
         </div>
     `;
 

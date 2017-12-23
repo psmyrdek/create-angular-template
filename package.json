@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint .",
     "check": "npm run test && npm run lint"
   },
@@ -24,12 +25,12 @@
   },
   "homepage": "https://github.com/psmyrdek/create-angular-template#readme",
   "dependencies": {
-    "jade": "^1.11.0",
-    "pug": "^2.0.0-rc.4"
+    "jade": "1.11.0",
+    "pug": "2.0.0-rc.4"
   },
   "devDependencies": {
     "@smartrecruiters/eslint-config": "3.0.0",
     "eslint": "4.13.1",
-    "jest": "^22.0.4"
+    "jest": "22.0.4"
   }
 }
