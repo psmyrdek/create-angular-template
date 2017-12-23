@@ -26,6 +26,13 @@ After:
 </div>
 ```
 
+## Usage
+
+```
+const { transformTemplate } = require('create-angular-template');
+const angularTemplate = transformTemplate(template, options);
+```
+
 ## Supported transformations
 
 ### Syntax changes:
