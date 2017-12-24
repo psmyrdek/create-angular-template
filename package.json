@@ -2,7 +2,7 @@
   "name": "create-angular-template",
   "version": "0.3.0",
   "description": "Transform AngularJS templates into Angular syntax",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",

@@ -49,6 +49,7 @@ const angularTemplate = transformTemplate(template, options);
 * `stripTagPrefix` (string) - used to strip prefixes like `data-ng-if` *(default: `data`)*
 * `aliasForThis` (string) - used in AngularJS to define scope of given variable *(default: `$ctrl`)*
 * `format` (string) - format of input template *(default: `html`)*
+* `bindToCurlyBraces` (boolean) - transform ng-bind to curly braces binding *(default: `false`)*
 
 ## Supported transformations
 
@@ -59,14 +60,17 @@ Based on [AngularJS to Angular Quick Reference CheatSheet](https://angular.io/gu
 * `ng-click` -> `(click)`
 * `ng-submit` -> `(ngSubmit)`
 * `ng-model` -> `[(ngModel)]`
+* `ng-if` -> `*ngIf`
 * `ng-switch` -> `[ngSwitch]`
 * `ng-switch-when` -> `*ngSwitchCase`
 * `ng-switch-default` -> `*ngSwitchDefault`
 * `ng-class` -> `[ngClass]`
 * `ng-hide` -> `[hidden]`
 * `ng-show` -> `[hidden] with negation`
-* `ng-if` -> `*ngIf`
-* `ng-repeat="item in items` -> `*ngFor="let item of items"`
+* `ng-bind` -> `[innerText]` (by default), or `{{ }}` (option `bindToCurlyBraces` set to `true`)
+* `ng-bind-html` -> `[innerHTML]`
+* `ng-hide` -> `[hidden]`
+* `ng-repeat="item in items"` -> `*ngFor="let item of items"`
 
 ### Additional options:
 

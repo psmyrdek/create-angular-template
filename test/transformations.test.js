@@ -1,4 +1,4 @@
-const { transformTemplate } = require('../lib/index');
+const { transformTemplate } = require('../index');
 
 test('It should strip data- prefix from all attributes by default', () => {
 
@@ -200,6 +200,110 @@ test('It should convert ng-switch to [ngSwitch]', () => {
                 Default option
             </p>
         </div>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-bind-html to [innerHTML]', () => {
+
+    const template = `
+        <span ng-bind-html="$ctrl.myValue" class="styled-span"></span>
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <span [innerHTML]="myValue" class="styled-span"></span>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-bind to [innerText]', () => {
+
+    const template = `
+        <span ng-bind="$ctrl.myValue" class="styled-span"></span>
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <span [innerText]="myValue" class="styled-span"></span>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-bind to curly braces', () => {
+
+    const template = `
+        <span ng-bind="$ctrl.myValue" class="styled-span"></span>
+    `;
+
+    const transformResult = transformTemplate(template, {
+        bindToCurlyBraces: true
+    });
+
+    const expectedResult = `
+        <span class="styled-span">{{ myValue }}</span>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-bind with filter to curly braces', () => {
+
+    const template = `
+        <span class="styled-span" ng-bind=":: 'binding' | myPipe"></span>
+    `;
+
+    const transformResult = transformTemplate(template, {
+        bindToCurlyBraces: true
+    });
+
+    const expectedResult = `
+        <span class="styled-span">{{ 'binding' | myPipe }}</span>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-bind in anchor to curly braces', () => {
+
+    const template = `
+        <a class="class-one class-two" href="www.github.com" ng-bind=":: 'translationKey' | i18n"></a>
+    `;
+
+    const transformResult = transformTemplate(template, {
+        bindToCurlyBraces: true
+    });
+
+    const expectedResult = `
+        <a class="class-one class-two" href="www.github.com">{{ 'translationKey' | i18n }}</a>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-bind in button to curly braces', () => {
+
+    const template = `
+        <button type="button" ng-bind="$ctrl.buttonLabel" ng-click="$ctrl.clickMe()"></button>
+    `;
+
+    const transformResult = transformTemplate(template, {
+        bindToCurlyBraces: true
+    });
+
+    const expectedResult = `
+        <button type="button" (click)="clickMe()">{{ buttonLabel }}</button>
     `;
 
     expect(transformResult).toEqual(expectedResult);

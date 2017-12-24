@@ -1,6 +1,6 @@
 const { readFileSync } = require('fs');
 const { join } = require('path');
-const { transformTemplate } = require('../lib/index');
+const { transformTemplate } = require('../index');
 
 test('It should be possible to transform pug template', () => {
 
