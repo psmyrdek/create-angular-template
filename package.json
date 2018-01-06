@@ -4,7 +4,7 @@
   "description": "Transform AngularJS templates into Angular syntax",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watch",
     "lint": "eslint .",
     "check": "npm run test && npm run lint"
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@smartrecruiters/eslint-config": "3.0.0",
+    "coveralls": "^3.0.0",
     "eslint": "4.13.1",
     "jest": "22.0.4"
   },
