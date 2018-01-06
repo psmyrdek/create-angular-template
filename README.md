@@ -1,6 +1,6 @@
 # Create Angular Template
 
-Transform AngularJS templates into Angular syntax. Currently supports Angular 5.1.x.
+Transform AngularJS templates into Angular syntax. Currently supports Angular 5.x.
 
 ## How it works
 
@@ -48,8 +48,9 @@ const angularTemplate = transformTemplate(template, options);
 
 * `stripTagPrefix` (string) - used to strip prefixes like `data-ng-if` *(default: `data`)*
 * `aliasForThis` (string) - used in AngularJS to define scope of given variable *(default: `$ctrl`)*
-* `format` (string) - format of input template *(default: `html`)*
+* `format` (string) - format of input template *(default: `html`, supported: html | pug | jade)*
 * `bindToCurlyBraces` (boolean) - transform ng-bind to curly braces binding *(default: `false`)*
+* `classListToRemove` (array) - array of classes which should be removed from elements *(default: `['ng-hide']`)*
 
 ## Supported transformations
 
@@ -71,17 +72,14 @@ Based on [AngularJS to Angular Quick Reference CheatSheet](https://angular.io/gu
 * `ng-bind-html` -> `[innerHTML]`
 * `ng-hide` -> `[hidden]`
 * `ng-repeat="item in items"` -> `*ngFor="let item of items"`
+* `ng-href` -> `[href]`
+* `ng-src` -> `[src]`
 
-### Additional options:
+### Extras:
 
-Strip prefixes:
+Prefixes cleanup:
 * `data-ng-if` -> `*ngIf`
+* `x-ng-hide` -> `[hidden]`
 
-Remove 'alias for this' - ($ctrl, vm, etc.):
+'Alias for this' cleanup - ($ctrl, vm, etc.):
 * `ng-hide="$ctrl.isHidden"` -> `[hidden]="isHidden"`
-
-## Supported formats
-
-* html
-* pug
-* jade

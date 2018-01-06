@@ -56,6 +56,42 @@ test('It should convert ng-hide to hidden property', () => {
 
 });
 
+test('It should convert ng-hide to hidden property and remove class attribute', () => {
+
+    const template = `
+        <div ng-hide="vm.shouldBeHidden" class="ng-hide"></div>
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <div [hidden]="vm.shouldBeHidden"></div>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-hide to hidden property and keep class attribute', () => {
+
+    const template1 = `<div ng-hide="vm.hide" class="ng-hide test test-2"></div>`;
+    const template2 = `<div ng-hide="vm.hide" class="test ng-hide test-2"></div>`;
+    const template3 = `<div ng-hide="vm.hide" class="test test-2 ng-hide"></div>`;
+
+    const transformResult1 = transformTemplate(template1);
+    const transformResult2 = transformTemplate(template2);
+    const transformResult3 = transformTemplate(template3);
+
+    const result1 = `<div [hidden]="vm.hide" class="test test-2"></div>`;
+    const result2 = `<div [hidden]="vm.hide" class="test test-2"></div>`;
+    const result3 = `<div [hidden]="vm.hide" class="test test-2"></div>`;
+
+    expect(transformResult1).toEqual(result1);
+    expect(transformResult2).toEqual(result2);
+    expect(transformResult3).toEqual(result3);
+
+});
+
 test('It should convert ng-show to hidden with negation', () => {
 
     const template = `
@@ -75,14 +111,14 @@ test('It should convert ng-show to hidden with negation', () => {
 test('It should convert ng-repeat to *ngFor', () => {
 
     const template = `
-    <li ng-repeat="item in vm.items"></li>
-`;
+        <li ng-repeat="item in vm.items"></li>
+    `;
 
     const transformResult = transformTemplate(template);
 
     const expectedResult = `
-    <li *ngFor="let item of vm.items"></li>
-`;
+        <li *ngFor="let item of vm.items"></li>
+    `;
 
     expect(transformResult).toEqual(expectedResult);
 
@@ -157,13 +193,13 @@ test('It should remove $ctrl as default alias for this', () => {
 test('It should convert ng-model to [(ng-model)]', () => {
 
     const template = `
-        <input type="text" ng-model="$ctrl.profileName" />
+        <input type="text" ng-model="$ctrl.profileName">
     `;
 
     const transformResult = transformTemplate(template);
 
     const expectedResult = `
-        <input type="text" [(ngModel)]="profileName" />
+        <input type="text" [(ngModel)]="profileName">
     `;
 
     expect(transformResult).toEqual(expectedResult);
@@ -196,7 +232,7 @@ test('It should convert ng-switch to [ngSwitch]', () => {
             <p *ngSwitchCase="false">
                 Modal hidden
             </p>
-            <p *ngSwitchDefault>
+            <p *ngSwitchDefault="">
                 Default option
             </p>
         </div>
@@ -305,6 +341,48 @@ test('It should convert ng-bind in button to curly braces', () => {
     const expectedResult = `
         <button type="button" (click)="clickMe()">{{ buttonLabel }}</button>
     `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should remove classes based on parameter', () => {
+
+    const template = `
+        <div class="one two three"></div>
+    `;
+
+    const transformResult = transformTemplate(template, {
+        classListToRemove: ['two', 'three']
+    });
+
+    const expectedResult = `
+        <div class="one"></div>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-href to [href]', () => {
+
+    const template = `<a ng-href="{{ $ctrl.linkToMyProfile }}">My Profile</a>`;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `<a [href]="linkToMyProfile">My Profile</a>`;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
+test('It should convert ng-src to [src]', () => {
+
+    const template = `<img ng-src="{{ $ctrl.myImageUrl }}">`;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `<img [src]="myImageUrl">`;
 
     expect(transformResult).toEqual(expectedResult);
 
