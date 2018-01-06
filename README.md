@@ -1,5 +1,7 @@
 # Create Angular Template
 
+[![Build - Master](https://travis-ci.org/psmyrdek/create-angular-template.svg?branch=master)](https://travis-ci.org/psmyrdek/create-angular-template)
+
 Transform AngularJS templates into Angular syntax. Currently supports Angular 5.x.
 
 ## How it works
