@@ -87,3 +87,7 @@ Prefixes cleanup:
 
 'Alias for this' cleanup - ($ctrl, vm, etc.):
 * `ng-hide="$ctrl.isHidden"` -> `[hidden]="isHidden"`
+
+### Would you like to see CLI here? Check Up!:
+
+[ng-up](https://www.npmjs.com/package/ng-up) - Angular Upgrade Toolkit
