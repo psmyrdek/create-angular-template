@@ -8,3 +8,8 @@ install:
 
 script:
   - npm run check
+  
+branches:
+  only:
+  - master
+  - /^greenkeeper/.*$/
