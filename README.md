@@ -1,5 +1,6 @@
 # Create Angular Template
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/psmyrdek/create-angular-template.svg)](https://greenkeeper.io/)
 [![Build - Master](https://travis-ci.org/psmyrdek/create-angular-template.svg?branch=master)](https://travis-ci.org/psmyrdek/create-angular-template)
 [![Coverage Status](https://coveralls.io/repos/github/psmyrdek/create-angular-template/badge.svg?branch=master)](https://coveralls.io/github/psmyrdek/create-angular-template?branch=master)
 [![Latest version](https://img.shields.io/npm/v/create-angular-template.svg)]()
