@@ -27,7 +27,7 @@
   "dependencies": {
     "jade": "1.11.0",
     "parse5": "4.0.0",
-    "pug": "2.0.1"
+    "pug": "2.0.3"
   },
   "devDependencies": {
     "@smartrecruiters/eslint-config": "3.0.0",
