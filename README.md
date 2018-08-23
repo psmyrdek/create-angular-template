@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/psmyrdek/create-angular-template/badge.svg?branch=master)](https://coveralls.io/github/psmyrdek/create-angular-template?branch=master)
 [![Latest version](https://img.shields.io/npm/v/create-angular-template.svg)]()
 
-Transform AngularJS templates into Angular syntax. Currently supports Angular 5.x.
+Transform AngularJS templates into Angular syntax. Currently supports Angular > 5.x.
 
 ## How it works
 
