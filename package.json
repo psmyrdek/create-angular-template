@@ -30,7 +30,7 @@
     "pug": "2.0.3"
   },
   "devDependencies": {
-    "@smartrecruiters/eslint-config": "4.0.0",
+    "@smartrecruiters/eslint-config": "4.3.0",
     "coveralls": "^3.0.0",
     "eslint": "5.0.0",
     "jest": "22.1.4"
