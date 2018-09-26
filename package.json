@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Transform AngularJS templates into Angular syntax",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watch",
@@ -26,16 +27,16 @@
   "homepage": "https://github.com/psmyrdek/create-angular-template#readme",
   "dependencies": {
     "jade": "1.11.0",
-    "parse5": "4.0.0",
+    "parse5": "5.1.0",
     "pug": "2.0.3"
   },
   "devDependencies": {
     "@smartrecruiters/eslint-config": "4.0.0",
     "coveralls": "^3.0.0",
     "eslint": "5.0.0",
-    "jest": "22.1.4"
+    "jest": "23.6.0"
   },
   "engines": {
-    "node": ">= 8.9"
+    "node": ">= 8"
   }
 }
