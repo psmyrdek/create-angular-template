@@ -89,6 +89,25 @@ Prefixes cleanup:
 'Alias for this' cleanup - ($ctrl, vm, etc.):
 * `ng-hide="$ctrl.isHidden"` -> `[hidden]="isHidden"`
 
+### Typescript integration
+
+Starting from 1.1.0 it's easier to use this library inside of TypeScript projects - there's a dedicated file containing type definitions which can help you write typed code.
+
+Example (.ts):
+
+```
+import {transformTemplate, TransformationOptions} from 'create-angular-template';
+
+const template = '<div ng-if="$ctrl.isVisible"></div>';
+
+const options: TransformationOptions = {
+    format: 'html',
+    aliasForThis: '$ctrl'
+};
+
+const transformed = transformTemplate(template, options);
+```
+
 ### Would you like to see CLI here? Check Up!:
 
 [ng-up](https://www.npmjs.com/package/ng-up) - Angular Upgrade Toolkit
