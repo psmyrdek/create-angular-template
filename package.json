@@ -1,6 +1,6 @@
 {
   "name": "create-angular-template",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Transform AngularJS templates into Angular syntax",
   "main": "index.js",
   "types": "index.d.ts",
@@ -26,12 +26,11 @@
   },
   "homepage": "https://github.com/psmyrdek/create-angular-template#readme",
   "dependencies": {
-    "jade": "1.11.0",
     "parse5": "5.1.0",
     "pug": "2.0.3"
   },
   "devDependencies": {
-    "@smartrecruiters/eslint-config": "4.0.0",
+    "@smartrecruiters/eslint-config": "4.2.0",
     "coveralls": "^3.0.0",
     "eslint": "5.0.0",
     "jest": "23.6.0"

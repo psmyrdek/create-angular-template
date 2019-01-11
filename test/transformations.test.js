@@ -140,6 +140,22 @@ test('It should convert ng-class to ngClass property', () => {
 
 });
 
+test('It should convert ng-submit to ngSubmit event', () => {
+
+    const template = `
+        <form ng-submit="onSubmit()"></form>
+    `;
+
+    const transformResult = transformTemplate(template);
+
+    const expectedResult = `
+        <form (ngSubmit)="onSubmit()"></form>
+    `;
+
+    expect(transformResult).toEqual(expectedResult);
+
+});
+
 test('It should replace alias for this - controllerAs, ctrl, vm, etc', () => {
 
     const template = `

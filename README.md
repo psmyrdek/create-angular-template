@@ -53,7 +53,7 @@ const angularTemplate = transformTemplate(template, options);
 
 * `stripTagPrefix` (string) - used to strip prefixes like `data-ng-if` *(default: `data`)*
 * `aliasForThis` (string) - used in AngularJS to define scope of given variable *(default: `$ctrl`)*
-* `format` (string) - format of input template *(default: `html`, supported: html | pug | jade)*
+* `format` (string) - format of input template *(default: `html`, supported: html | pug)*
 * `bindToCurlyBraces` (boolean) - transform ng-bind to curly braces binding *(default: `false`)*
 * `classListToRemove` (array) - array of classes which should be removed from elements *(default: `['ng-hide']`)*
 

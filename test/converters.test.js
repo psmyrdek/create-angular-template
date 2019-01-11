@@ -16,16 +16,14 @@ test('It should be possible to transform pug template', () => {
 
 });
 
-test('It should be possible to transform jade template', () => {
+test('It should throw in case of unknown format', () => {
 
-    const template = readFileSync(join(__dirname, './cases/jade/base.jade'), "utf8");
+    const template = '## This is markdown';
 
-    const transformResult = transformTemplate(template, {
-        format: 'jade'
-    });
-
-    const expectedResult = readFileSync(join(__dirname, './cases/jade/result.html'), "utf8");
-
-    expect(transformResult).toEqual(expectedResult);
+    expect(() => {
+        transformTemplate(template, {
+            format: 'md'
+        })
+    }).toThrow();
 
 });
