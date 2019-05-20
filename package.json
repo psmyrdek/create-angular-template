@@ -1,6 +1,6 @@
 {
   "name": "create-angular-template",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Transform AngularJS templates into Angular syntax",
   "main": "index.js",
   "types": "index.d.ts",
