@@ -27,7 +27,7 @@
   "homepage": "https://github.com/psmyrdek/create-angular-template#readme",
   "dependencies": {
     "parse5": "5.1.0",
-    "pug": "2.0.3"
+    "pug": "2.0.4"
   },
   "devDependencies": {
     "@smartrecruiters/eslint-config": "4.2.0",
