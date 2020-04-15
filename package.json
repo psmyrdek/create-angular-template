@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/psmyrdek/create-angular-template#readme",
   "dependencies": {
-    "parse5": "5.1.0",
+    "parse5": "6.0.0",
     "pug": "2.0.3"
   },
   "devDependencies": {
